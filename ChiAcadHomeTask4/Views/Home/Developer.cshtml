@@ -1,0 +1,29 @@
+﻿@model ChiAcadHomeTask4.Models.DeveloperViewModel
+
+<div class="container mt-5">
+    <h2 class="text-center">
+        I, <strong>@Model.CurrentUser.Name</strong> (<em>@Model.CurrentUser.Email</em>), became an ASP.NET developer
+    </h2>
+
+    <hr class="my-4" />
+
+    <h4 class="text-center mb-3">All ASP.NET developers</h4>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.AllUsers)
+            {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
